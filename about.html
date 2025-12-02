@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | FODMAP-Analytics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* About Grid / Split Layout */
+        .about-section {
+            padding: 6rem 0;
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .split-content h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .split-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .split-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Industry Context Section (Light Gray) */
+        .industry-section {
+            background: var(--light);
+            padding: 6rem 0;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.125rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-image {
+            height: 260px;
+            background-color: #e2e8f0;
+            position: relative;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-content {
+            padding: 1.5rem;
+        }
+
+        .team-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-content .role {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .team-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 10px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 8px;
+        }
+
+        .value-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        footer p {
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="home.html" class="logo">Datatribute LLC</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Decoding Gut Health Data</h1>
+        <p>We bridge the gap between clinical science and consumer market trends, helping brands navigate the rapidly growing low-FODMAP landscape.</p>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-content">
+                    <h2>Our Origin Story</h2>
+                    <p>It started in 2020 with a simple observation: while the science behind Irritable Bowel Syndrome (IBS) was advancing rapidly, the data available to food manufacturers was stuck in the past.</p>
+                    <p>Our founder, Adam LaCaria, a Data Engineer living with IBS, realized that navigating the grocery store was a statistical nightmare. He saw a disconnect between the <strong>1 in 7 people worldwide</strong> suffering from IBS and the food brands trying to serve them.</p>
+                    <p>FODMAP-Analytics was born from a desire to translate complex digestive health data into actionable insights. We don't just count calories; we analyze fermentable carbohydrates to predict market trends before they hit the shelves.</p>
+                </div>
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Data Analytics Team Meeting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Products Analyzed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50M+</h3>
+                    <p>Consumer Data Points</p>
+                </div>
+                <div class="stat-item">
+                    <h3>12</h3>
+                    <p>Global Markets</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24h</h3>
+                    <p>Insight Turnaround</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="industry-section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Healthy Food Ingredients">
+                </div>
+                <div class="split-content">
+                    <h2>The Rise of the Low-FODMAP Industry</h2>
+                    <p>In 2005, researchers at <strong>Monash University</strong> in Australia coined the term "FODMAP" (Fermentable Oligosaccharides, Disaccharides, Monosaccharides, and Polyols). What began as clinical research has exploded into a global movement.</p>
+                    <p>The "Free-From" food category is evolving. While the 2010s were dominated by the Gluten-Free boom, the 2020s are defined by <strong>Gut Health</strong>. The global low-FODMAP market is projected to grow at a CAGR of nearly 11% through 2030.</p>
+                    <p>We believe this isn't just a diet trends; it's a medical necessity for millions. We help companies move beyond "gut feeling" strategies and rely on hard data to create products that are both delicious and digestible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>We are data scientists, nutritionists, and strategists working together.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🔬</div>
+                    <h3>Scientific Integrity</h3>
+                    <p>We don't guess. Our analytics are grounded in the latest peer-reviewed research from leading gastroenterology institutions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📊</div>
+                    <h3>Data-First Design</h3>
+                    <p>We believe numbers tell a story. By analyzing purchasing patterns and ingredient trends, we reduce risk for manufacturers.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💚</div>
+                    <h3>Empathy for the End User</h3>
+                    <p>We never forget the patient at the end of the supply chain. Every insight we generate is aimed at improving quality of life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet The Experts</h2>
+                <p>The minds behind the metrics.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/profile.png" alt="Adam L">
+                    </div>
+                    <div class="team-content">
+                        <h3>Adam LaCaria</h3>
+                        <span class="role">Founder & Lead Data Engineer</span>
+                        <p>Adam combines 10 years of Python/SQL expertise with a passion for digestive health advocacy.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/pic01.jpg" alt="Sarah Miller">
+                    </div>
+                    <div class="team-content">
+                        <h3>On Staff, RDs</h3>
+                        <span class="role">Head(s) of Nutritional Science</span>
+                        <p>Registered dietitians specializing in IBS management. Our team ensures all our data algorithms align with Monash University standards.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3 style="color: white; margin-bottom: 1rem;">FODMAP-Analytics</h3>
+                    <p style="text-align: left;">Data-driven solutions for the future of food.</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Datatribute LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
