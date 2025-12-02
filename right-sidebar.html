@@ -1,169 +1,730 @@
-<!DOCTYPE HTML>
-<!--
-	Dopetrope by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Dopetrope by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="right-sidebar is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | FODMAP-Analytics</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-			<!-- Header -->
-				<section id="header">
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
 
-					<!-- Logo -->
-						<h1><a href="index.html">FODMAP-Analytics</a></h1>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #ffffff;
+        }
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li class="current"><a href="right-sidebar.html">Services</a></li>
-								<li><a href="left-sidebar.html">About</a></li>
-								<li><a href="no-sidebar.html">Contact</a></li>
-							</ul>
-						</nav>
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
 
-				</section>
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
 
-			<!-- Main -->
-				<section id="main">
-					<div class="container">
-						<div class="row">
-							<div class="col-8 col-12-medium">
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
-								<!-- Content -->
-									<article class="box post">
-										<a href="#" class="image featured"><img src="https://via.placeholder.com/800x300.png?text=Our+Services" alt="" /></a>
-										<header>
-											<h2>Our Services</h2>
-											<p>We offer a range of services to help you succeed in the low-FODMAP market.</p>
-										</header>
-										<section>
-											<header>
-												<h3>Market Snapshot Package</h3>
-											</header>
-											<p>
-												This foundational package is designed for businesses entering the low-FODMAP space or seeking to validate their existing assumptions. We deliver a comprehensive report that includes:
-											</p>
-											<ul>
-												<li><strong>Market Sizing and Growth Projections:</strong> Understand the current and future potential of the low-FODMAP market, with data-driven forecasts.</li>
-												<li><strong>Consumer Demographics and Behavior:</strong> Get a clear picture of your target audience, their needs, and their purchasing habits.</li>
-												<li><strong>Key Trends and Opportunities:</strong> We identify emerging trends and untapped opportunities that can give you a first-mover advantage.</li>
-											</ul>
-										</section>
-										<section>
-											<header>
-												<h3>Competitive Edge Package</h3>
-											</header>
-											<p>
-												Building on the Market Snapshot, this package provides an in-depth analysis of the competitive landscape. We help you understand your position relative to your competitors and identify opportunities to differentiate your brand. This package includes:
-											</p>
-											<ul>
-												<li><strong>Competitor Profiling:</strong> A detailed breakdown of key competitors, their product offerings, pricing strategies, and market share.</li>
-												<li><strong>SWOT Analysis:</strong> We identify the strengths, weaknesses, opportunities, and threats for your business and your key competitors.</li>
-												<li><strong>Market Gap Analysis:</strong> We pinpoint underserved segments and unmet consumer needs, providing a clear path for your product development and marketing efforts.</li>
-											</ul>
-										</section>
-										<section>
-											<header>
-												<h3>Go-to-Market Pro Package</h3>
-											</header>
-											<p>
-												Our most comprehensive offering, the Go-to-Market Pro package, provides a complete roadmap for a successful product launch or expansion. We work with you to develop a tailored strategy that covers all aspects of the go-to-market process. This package includes everything in the Competitive Edge Package, plus:
-											</p>
-											<ul>
-												<li><strong>Product Positioning and Messaging:</strong> We help you define a compelling value proposition and craft a message that resonates with your target audience.</li>
-												<li><strong>Pricing and Distribution Strategy:</strong> We provide recommendations for a pricing strategy that maximizes profitability and a distribution strategy that ensures your product reaches your target customers.</li>
-												<li><strong>Marketing and Sales Plan:</strong> A detailed plan to build brand awareness, generate leads, and drive sales.</li>
-											</ul>
-										</section>
-									</article>
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-							</div>
-							<div class="col-4 col-12-medium">
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-								<!-- Sidebar -->
-									<section class="box">
-										<header>
-											<h3>Why Choose Us?</h3>
-										</header>
-										<p>With over [X] years of experience in the food industry and a deep understanding of the low-FODMAP market, we are your ideal partner for success. We combine data-driven insights with practical, real-world experience to deliver results.</p>
-									</section>
-									<section class="box">
-										<header>
-											<h3>Case Studies</h3>
-										</header>
-										<p>We have helped numerous clients achieve their goals in the low-FODMAP market. Here are a few examples:</p>
-										<ul class="divided">
-											<li><a href="#">Client A: Successful Product Launch</a></li>
-											<li><a href="#">Client B: 20% Increase in Market Share</a></li>
-											<li><a href="#">Client C: Expansion into New Markets</a></li>
-										</ul>
-										<footer>
-											<a href="#" class="button alt">Read More</a>
-										</footer>
-									</section>
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
 
-							</div>
-						</div>
-					</div>
-				</section>
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
 
-			<!-- Footer -->
-				<section id="footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<!-- Contact -->
-									<section id="contact">
-										<header>
-											<h2>Contact Us</h2>
-										</header>
-										<p>Ready to unlock the potential of the low-FODMAP market? Contact us today for a free consultation.</p>
-										<ul class="contact">
-											<li>
-												<h3>Mail</h3>
-												<p><a href="#">[your-email@example.com]</a></p>
-											</li>
-											<li>
-												<h3>Phone</h3>
-												<p>[Your Phone Number]</p>
-											</li>
-										</ul>
-										<ul class="social">
-											<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-											<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-											<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
-										</ul>
-									</section>
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
 
-								<!-- Copyright -->
-									<div id="copyright">
-										<ul class="links">
-											<li>&copy; FODMAP-Analytics. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-										</ul>
-									</div>
-							</div>
-						</div>
-					</div>
-				</section>
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-		</div>
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        /* Services Detailed Section */
+        .services-detailed {
+            padding: 6rem 2rem;
+        }
 
-	</body>
+        .service-detail {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            transition: all 0.3s;
+        }
+
+        .service-detail:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-icon-large {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .service-title h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .service-badge {
+            display: inline-block;
+            background: var(--light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .service-description {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .feature-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+
+        .feature-text p {
+            font-size: 0.875rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .service-deliverables {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .service-deliverables h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .deliverables-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .deliverables-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark);
+        }
+
+        .deliverables-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .service-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .pricing-info {
+            font-size: 1.125rem;
+            color: var(--gray);
+        }
+
+        .pricing-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 6rem 2rem;
+            background: var(--dark);
+            color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            opacity: 0.8;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .service-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .service-cta {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .service-detail {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Datatribute LLC</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="right-sidebar.html" class="active">Services</a></li>
+                <li><a href="left-sidebar.html">About</a></li>
+                <li><a href="no-sidebar.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive market intelligence packages designed to power your success in the low-FODMAP industry</p>
+    </section>
+
+    <!-- Services Detailed -->
+    <section class="services-detailed">
+        <div class="container">
+            <!-- Market Snapshot Package -->
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">📊</div>
+                    <div class="service-title">
+                        <h2>Market Snapshot Package</h2>
+                        <span class="service-badge">Essential • Entry Level</span>
+                    </div>
+                </div>
+                <p class="service-description">
+                    Perfect for new entrants and businesses looking to understand the low-FODMAP landscape. Our Market Snapshot Package provides you with a comprehensive foundation of market intelligence, helping you make informed decisions about entering or expanding within this growing sector.
+                </p>
+                
+                <div class="service-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-text">
+                            <h4>Market Size & Growth</h4>
+                            <p>Current market valuation and 5-year growth projections with detailed analysis</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <div class="feature-text">
+                            <h4>Consumer Demographics</h4>
+                            <p>Detailed profiles of target consumers, their behaviors, and purchasing patterns</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔍</div>
+                        <div class="feature-text">
+                            <h4>Trend Analysis</h4>
+                            <p>Emerging trends, innovations, and shifts in consumer preferences</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌍</div>
+                        <div class="feature-text">
+                            <h4>Regional Insights</h4>
+                            <p>Geographic market variations and regional opportunities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-deliverables">
+                    <h3>What You'll Receive:</h3>
+                    <ul class="deliverables-list">
+                        <li>40-page market analysis report</li>
+                        <li>Executive summary presentation</li>
+                        <li>Market size data & forecasts</li>
+                        <li>Consumer demographic profiles</li>
+                        <li>Key trend identification</li>
+                        <li>30-minute consultation call</li>
+                    </ul>
+                </div>
+
+                <div class="service-cta">
+                    <div class="pricing-info">
+                        Starting at
+                        <span class="pricing-amount">Contact for Pricing</span>
+                    </div>
+                    <a href="no-sidebar.html" class="btn btn-primary">Request a Quote</a>
+                </div>
+            </div>
+
+            <!-- Competitive Edge Package -->
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">🎯</div>
+                    <div class="service-title">
+                        <h2>Competitive Edge Package</h2>
+                        <span class="service-badge">Advanced • Growth Focused</span>
+                    </div>
+                </div>
+                <p class="service-description">
+                    Gain a significant competitive advantage with our comprehensive analysis package. We go beyond basic market data to dissect your competition, identify market gaps, and reveal strategic opportunities that will position your business for success. This package includes everything from the Market Snapshot Package plus advanced competitive intelligence.
+                </p>
+                
+                <div class="service-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🏢</div>
+                        <div class="feature-text">
+                            <h4>Competitor Profiling</h4>
+                            <p>Deep-dive analysis of 10-15 key competitors including strategies and positioning</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-text">
+                            <h4>Pricing Analysis</h4>
+                            <p>Comprehensive pricing benchmarks and competitive pricing strategies</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📦</div>
+                        <div class="feature-text">
+                            <h4>Product Portfolio Review</h4>
+                            <p>Analysis of competitor offerings, strengths, and weaknesses</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💎</div>
+                        <div class="feature-text">
+                            <h4>Market Gap Identification</h4>
+                            <p>Uncover underserved niches and opportunities for differentiation</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-text">
+                            <h4>Marketing Strategy Analysis</h4>
+                            <p>Review of competitor marketing channels, messaging, and effectiveness</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-text">
+                            <h4>SWOT Analysis</h4>
+                            <p>Detailed strengths, weaknesses, opportunities, and threats assessment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-deliverables">
+                    <h3>What You'll Receive:</h3>
+                    <ul class="deliverables-list">
+                        <li>Complete Market Snapshot Package</li>
+                        <li>70-page competitive analysis report</li>
+                        <li>Competitor comparison matrices</li>
+                        <li>Pricing strategy recommendations</li>
+                        <li>Market opportunity maps</li>
+                        <li>Strategic positioning guide</li>
+                        <li>Two 60-minute strategy sessions</li>
+                        <li>90-day email support</li>
+                    </ul>
+                </div>
+
+                <div class="service-cta">
+                    <div class="pricing-info">
+                        Starting at
+                        <span class="pricing-amount">Contact for Pricing</span>
+                    </div>
+                    <a href="no-sidebar.html" class="btn btn-primary">Request a Quote</a>
+                </div>
+            </div>
+
+            <!-- Go-to-Market Pro Package -->
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon-large">🚀</div>
+                    <div class="service-title">
+                        <h2>Go-to-Market Pro Package</h2>
+                        <span class="service-badge">Premium • Complete Solution</span>
+                    </div>
+                </div>
+                <p class="service-description">
+                    Our most comprehensive offering designed for businesses ready to launch or scale in the low-FODMAP market. This package includes everything from our other packages plus a complete, customized go-to-market strategy that guides you from concept to successful launch and beyond. We become your strategic partner in market entry and growth.
+                </p>
+                
+                <div class="service-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <div class="feature-text">
+                            <h4>Product Positioning</h4>
+                            <p>Craft compelling brand positioning and unique value propositions</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💵</div>
+                        <div class="feature-text">
+                            <h4>Pricing Strategy</h4>
+                            <p>Develop optimal pricing models based on market data and positioning</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛒</div>
+                        <div class="feature-text">
+                            <h4>Distribution Planning</h4>
+                            <p>Identify and prioritize distribution channels for maximum reach</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📢</div>
+                        <div class="feature-text">
+                            <h4>Marketing Blueprint</h4>
+                            <p>Complete marketing plan with campaigns, channels, and content strategy</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-text">
+                            <h4>Sales Strategy</h4>
+                            <p>Sales channel optimization and revenue projection modeling</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📅</div>
+                        <div class="feature-text">
+                            <h4>Launch Timeline</h4>
+                            <p>Detailed 12-month roadmap with milestones and KPIs</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <div class="feature-text">
+                            <h4>Partnership Opportunities</h4>
+                            <p>Identify potential retail, distributor, and strategic partnerships</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-text">
+                            <h4>Performance Tracking</h4>
+                            <p>KPI framework and analytics dashboard for ongoing optimization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-deliverables">
+                    <h3>What You'll Receive:</h3>
+                    <ul class="deliverables-list">
+                        <li>Complete Competitive Edge Package</li>
+                        <li>120+ page go-to-market strategy</li>
+                        <li>Brand positioning framework</li>
+                        <li>Pricing model & financial projections</li>
+                        <li>Distribution channel strategy</li>
+                        <li>12-month marketing plan</li>
+                        <li>Sales playbook & materials</li>
+                        <li>Launch timeline & checklist</li>
+                        <li>Partnership opportunity list</li>
+                        <li>KPI dashboard template</li>
+                        <li>Monthly strategy sessions (6 months)</li>
+                        <li>6 months of priority support</li>
+                    </ul>
+                </div>
+
+                <div class="service-cta">
+                    <div class="pricing-info">
+                        Starting at
+                        <span class="pricing-amount">Contact for Pricing</span>
+                    </div>
+                    <a href="no-sidebar.html" class="btn btn-primary">Request a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Process</h2>
+                <p>A proven methodology that delivers results</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We begin with an in-depth consultation to understand your business, goals, and specific needs in the low-FODMAP market.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Research</h3>
+                    <p>Our team conducts comprehensive market research, competitive analysis, and data collection using industry-leading tools.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Analysis</h3>
+                    <p>We analyze the data to identify trends, opportunities, and strategic insights tailored to your business objectives.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Delivery</h3>
+                    <p>Receive your comprehensive report and strategy documents, followed by collaborative review sessions to ensure clarity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Let's discuss how we can help you succeed in the low-FODMAP market</p>
+            <a href="no-sidebar.html" class="btn btn-white">Schedule a Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Datatribute LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
