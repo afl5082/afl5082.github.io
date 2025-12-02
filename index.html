@@ -348,6 +348,21 @@
             color: white;
             font-size: 1.25rem;
         }
+                /* 1. Set the size of the box the image lives in */
+        .service-image {
+            width: 100%;
+            height: 250px; /* You can adjust this height to whatever you prefer */
+            overflow: hidden;
+        }
+
+        /* 2. Tell the image how to fit inside that box */
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;      /* This ensures the image covers the area without stretching */
+            object-position: center; /* This centers the image */
+            display: block;          /* Removes tiny gap often seen under images */
+        }
 
         .contact-card h3 {
             margin-bottom: 0.5rem;
@@ -469,7 +484,9 @@
                     </div>
                 </div>
                 <div class="service-card">
-   					<div class="service-image" style="background-image: url('images/gtm.png'); background-size: cover; background-position: center;"></div>
+                <div class="service-image">
+                    <img src="images/gtm.png" alt="Go-to-Market Strategy"> 
+                </div>
                     <div class="service-content">
                         <span class="service-tag">Premium</span>
                         <h3>Go-to-Market Pro Package</h3>
