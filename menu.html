@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standard Menu | FODMAP DATATRIBUTE LLC</title>
+    <title>Menu | FODMAP DATATRIBUTE LLC</title>
     <style>
         * {
             margin: 0;
@@ -20,7 +20,6 @@
             --light: #f8fafc;
             --gray: #64748b;
             --border: #e2e8f0;
-            --cream: #fffbf0; /* A slight warmth for the menu background */
         }
 
         body {
@@ -97,7 +96,7 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif; /* Optional: adds a culinary feel */
+            font-family: 'Playfair Display', serif;
         }
 
         .page-header p {
@@ -107,14 +106,13 @@
             margin: 0 auto;
         }
 
-        /* Menu Container */
+        /* Main Visual Menu Container */
         .menu-container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
 
-        /* Menu Categories */
         .menu-category {
             margin-bottom: 5rem;
         }
@@ -146,7 +144,7 @@
             z-index: 0;
         }
 
-        /* Menu Grid */
+        /* Visual Menu Grid */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -214,101 +212,87 @@
             text-transform: uppercase;
         }
 
-        .badge-gf { background: #e0f2fe; color: #0284c7; } /* Blue */
-        .badge-lf { background: #dcfce7; color: #16a34a; } /* Green */
-        .badge-v { background: #fef3c7; color: #d97706; } /* Orange */
+        .badge-gf { background: #e0f2fe; color: #0284c7; }
+        .badge-lf { background: #dcfce7; color: #16a34a; }
+        .badge-v { background: #fef3c7; color: #d97706; }
 
-        /* Packages Section */
-        .packages-section {
-            background: var(--dark);
-            color: white;
+        /* TEXT ONLY EXPANDED MENU STYLES */
+        .expanded-menu-section {
+            background: white;
             padding: 6rem 2rem;
+            border-top: 1px solid var(--border);
         }
 
-        .packages-grid {
+        .text-menu-grid {
+            max-width: 1100px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 3rem auto 0;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 4rem;
         }
 
-        .package-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 3rem 2rem;
-            border-radius: 16px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .package-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: scale(1.02);
-        }
-
-        .package-card.featured {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border: none;
-            transform: scale(1.05);
-        }
-
-        .package-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .package-price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            display: block;
-        }
-
-        .package-price span {
-            font-size: 1rem;
-            opacity: 0.7;
-            font-weight: 400;
-        }
-
-        .package-list {
-            list-style: none;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .package-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .btn {
+        .text-category h3 {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
             display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
         }
-        
-        .btn-white {
-            background: white;
-            color: var(--primary);
+
+        .dish-list {
+            list-style: none;
         }
-        
-        .btn-outline {
-            border: 2px solid white;
-            color: white;
+
+        .dish-row {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 1.5rem;
         }
-        
-        .btn-outline:hover {
-            background: white;
+
+        .dish-row:last-child {
+            border-bottom: none;
+        }
+
+        .dish-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .dish-name {
+            font-weight: 700;
+            font-size: 1.1rem;
             color: var(--dark);
+        }
+
+        .dish-description {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .mini-badge {
+            font-size: 0.7rem;
+            color: var(--gray);
+            border: 1px solid var(--border);
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .cta-footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
         }
 
         /* Footer */
         footer {
-            background: #0b1120; /* Darker than dark var */
+            background: #0b1120;
             color: white;
             padding: 2rem;
             text-align: center;
@@ -319,7 +303,7 @@
             .menu-grid { grid-template-columns: 1fr; }
             .menu-item { flex-direction: column; }
             .menu-img { width: 100%; height: 200px; }
-            .package-card.featured { transform: scale(1); }
+            .text-menu-grid { grid-template-columns: 1fr; gap: 3rem; }
         }
     </style>
 </head>
@@ -333,6 +317,7 @@
                 <li><a href="services.html">Catering</a></li>
                 <li><a href="menu.html" class="active">Menu</a></li>
                 <li><a href="science.html">The Science</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Book Event</a></li>
             </ul>
         </div>
@@ -347,11 +332,11 @@
         
         <div class="menu-category">
             <div class="category-title">
-                <h2>Proteins & Mains</h2>
+                <h2>Signature Plates</h2>
             </div>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a7270028d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Salmon" class="menu-img">
+                    <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Salmon" class="menu-img">
                     <div class="menu-content">
                         <div class="item-header">
                             <h3>Maple Glazed Atlantic Salmon</h3>
@@ -412,7 +397,7 @@
 
         <div class="menu-category">
             <div class="category-title">
-                <h2>Starches & Sides</h2>
+                <h2>Accompaniments</h2>
             </div>
             <div class="menu-grid">
                 <div class="menu-item">
@@ -444,92 +429,129 @@
                 </div>
             </div>
         </div>
+    </div>
 
-         <div class="menu-category">
-            <div class="category-title">
-                <h2>Desserts</h2>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1579306194872-64d3b7bac4c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Dessert" class="menu-img">
-                    <div class="menu-content">
-                        <div class="item-header">
-                            <h3>Dark Chocolate Silk Mousse</h3>
-                        </div>
-                        <p class="item-desc">Made with lactose-free cream and 70% dark chocolate. Rich, airy, and entirely safe for dairy sensitivities.</p>
-                        <div class="item-badges">
-                            <span class="badge badge-gf">GF</span>
-                            <span class="badge badge-lf">Low Lactose</span>
-                        </div>
-                    </div>
+    <section class="expanded-menu-section">
+        <div class="category-title">
+            <h2>Seasonal & Expanded Offerings</h2>
+            <p style="margin-top: 1rem; color: var(--gray);">Additional selections available for catering packages and custom events.</p>
+        </div>
+
+        <div class="text-menu-grid">
+            <div class="menu-column">
+                <div class="text-category">
+                    <h3>Passed Hors d'Oeuvres</h3>
+                    <ul class="dish-list">
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Rice Paper Spring Rolls</span>
+                                <span class="mini-badge">GF / V</span>
+                            </div>
+                            <div class="dish-description">Filled with shrimp, vermicelli, mint, and cucumber. Served with peanut-free sesame dip.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Polenta Bites & Tapenade</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Crispy corn polenta squares topped with green olive and caper tapenade (garlic-free).</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Molecular Caprese Skewers</span>
+                                <span class="mini-badge">LF</span>
+                            </div>
+                            <div class="dish-description">Cherry tomato, lactose-free mozzarella pearls, and basil-infused oil drizzle.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Prosciutto Wrapped Melon</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Aged prosciutto di parma wrapped around cantaloupe (fructose-safe portions).</div>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="menu-item">
-                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pavlova" class="menu-img">
-                    <div class="menu-content">
-                        <div class="item-header">
-                            <h3>Berry Pavlova Nests</h3>
-                        </div>
-                        <p class="item-desc">Crisp meringue topped with lactose-free whipped cream and safe portions of strawberries and blueberries.</p>
-                        <div class="item-badges">
-                            <span class="badge badge-gf">GF</span>
-                            <span class="badge badge-lf">Low Fructose</span>
-                        </div>
-                    </div>
+                <div class="text-category" style="margin-top: 3rem;">
+                    <h3>Soups & Salads</h3>
+                    <ul class="dish-list">
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Verified Bone Broth</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Slow-simmered chicken or beef broth made without onions/mirepoix. Herbs only.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Arugula & Walnut</span>
+                                <span class="mini-badge">V</span>
+                            </div>
+                            <div class="dish-description">Baby arugula, toasted walnuts, shaved parmesan (aged), lemon emulsion.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="menu-column">
+                <div class="text-category">
+                    <h3>Premium Entrées</h3>
+                    <ul class="dish-list">
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Risotto Milanese</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Arborio rice cooked in saffron-infused verified broth with lactose-free butter finish.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Mustard Pork Tenderloin</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Roasted pork medallions with a maple-mustard reduction and thyme.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Seared Scallops</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Day-boat scallops served over carrot-ginger purée (no cream).</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Ginger-Soy Tofu Stir Fry</span>
+                                <span class="mini-badge">V</span>
+                            </div>
+                            <div class="dish-description">Firm tofu, bok choy, and bell peppers in a garlic-free tamari glaze.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="text-category" style="margin-top: 3rem;">
+                    <h3>Beverage Program</h3>
+                    <ul class="dish-list">
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Low-Fructose Mocktails</span>
+                            </div>
+                            <div class="dish-description">Cucumber-Basil Soda, Cranberry-Lime spritzers (no HFCS).</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Digestif Selection</span>
+                            </div>
+                            <div class="dish-description">Curated list of peppermint teas and ginger infusions to aid digestion post-meal.</div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-    </div>
-
-    <section class="packages-section">
-        <div class="container">
-            <div class="category-title">
-                <h2 style="background: transparent; color: white; border: none;">Standard Packages</h2>
-            </div>
-            <p style="text-align: center; opacity: 0.8; margin-bottom: 3rem;">Easy ordering for corporate and private events.</p>
-            
-            <div class="packages-grid">
-                <div class="package-card">
-                    <h3 class="package-title">The Analyst Lunch</h3>
-                    <div class="package-price">$18<span>/head</span></div>
-                    <ul class="package-list">
-                        <li>Choice of 1 Main (Boxed)</li>
-                        <li>Includes Roasted Potato Side</li>
-                        <li>Side Salad with House Vinaigrette</li>
-                        <li>Dark Chocolate Bite</li>
-                        <li>Delivery in Eco-Packaging</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline">Order Now</a>
-                </div>
-
-                <div class="package-card featured">
-                    <div class="badge badge-v" style="margin-bottom: 1rem; display: inline-block;">Most Popular</div>
-                    <h3 class="package-title">The Executive Buffet</h3>
-                    <div class="package-price">$32<span>/head</span></div>
-                    <ul class="package-list">
-                        <li>Choice of 2 Mains</li>
-                        <li>Choice of 2 Sides</li>
-                        <li>Sourdough Bread Basket</li>
-                        <li>Dessert Platter</li>
-                        <li>Chafing Dishes & Setup Included</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-white">Order Now</a>
-                </div>
-
-                <div class="package-card">
-                    <h3 class="package-title">The Gala Experience</h3>
-                    <div class="package-price">$65<span>/head</span></div>
-                    <ul class="package-list">
-                        <li>3 Course Plated Meal</li>
-                        <li>Appetizer Hour Included</li>
-                        <li>Full Service Waitstaff</li>
-                        <li>Custom Menu Consultation</li>
-                        <li>Wine Pairing Options</li>
-                    </ul>
-                    <a href="contact.html" class="btn btn-outline">Request Quote</a>
-                </div>
-            </div>
+        <div class="cta-footer">
+            <h3 style="margin-bottom: 1rem;">Ready to build your menu?</h3>
+            <a href="contact.html" class="btn" style="background: var(--primary); color: white;">Start Your Order</a>
         </div>
     </section>
 
