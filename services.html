@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | FODMAP-Analytics</title>
+    <title>Catering Services | FODMAP DATATRIBUTE LLC</title>
     <style>
         * {
             margin: 0;
@@ -12,10 +12,11 @@
         }
 
         :root {
+            /* Consistent Palette */
             --primary: #2563eb;
             --primary-dark: #1e40af;
             --secondary: #10b981;
-            --accent: #8b5cf6;
+            --accent: #f59e0b;
             --dark: #0f172a;
             --light: #f8fafc;
             --gray: #64748b;
@@ -34,7 +35,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -51,9 +52,15 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-weight: 800;
+            color: var(--dark);
             text-decoration: none;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--primary);
         }
 
         .nav-links {
@@ -65,8 +72,10 @@
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover,
@@ -77,9 +86,12 @@
         /* Page Header */
         .page-header {
             margin-top: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Food-centric gradient */
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             text-align: center;
         }
 
@@ -112,13 +124,32 @@
             background: white;
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 3rem;
-            margin-bottom: 3rem;
+            overflow: hidden; /* For the image banner */
+            margin-bottom: 4rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: all 0.3s;
         }
 
         .service-detail:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* New Image Banner for Service Cards */
+        .service-hero-image {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+
+        .service-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-content-wrapper {
+            padding: 3rem;
         }
 
         .service-header {
@@ -138,6 +169,7 @@
             justify-content: center;
             font-size: 2.5rem;
             flex-shrink: 0;
+            color: white;
         }
 
         .service-title h2 {
@@ -154,6 +186,7 @@
             font-size: 0.875rem;
             font-weight: 600;
             color: var(--primary);
+            text-transform: uppercase;
         }
 
         .service-description {
@@ -166,7 +199,7 @@
         .service-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
             margin-bottom: 2rem;
         }
 
@@ -194,10 +227,11 @@
             font-size: 1rem;
             margin-bottom: 0.25rem;
             color: var(--dark);
+            font-weight: 700;
         }
 
         .feature-text p {
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             color: var(--gray);
             line-height: 1.6;
         }
@@ -219,7 +253,7 @@
             list-style: none;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0.75rem;
+            gap: 1rem;
         }
 
         .deliverables-list li {
@@ -227,6 +261,7 @@
             align-items: center;
             gap: 0.5rem;
             color: var(--dark);
+            font-size: 0.95rem;
         }
 
         .deliverables-list li::before {
@@ -245,7 +280,7 @@
         }
 
         .pricing-info {
-            font-size: 1.125rem;
+            font-size: 1rem;
             color: var(--gray);
         }
 
@@ -259,11 +294,13 @@
 
         .btn {
             padding: 1rem 2rem;
-            border-radius: 8px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         .btn-primary {
@@ -336,7 +373,7 @@
         /* CTA Section */
         .cta-section {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #10b981 100%);
             color: white;
             text-align: center;
         }
@@ -355,6 +392,8 @@
         .btn-white {
             background: white;
             color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
         }
 
         .btn-white:hover {
@@ -395,324 +434,288 @@
                 text-align: center;
             }
 
-            .service-detail {
-                padding: 2rem;
+            .service-content-wrapper {
+                padding: 1.5rem;
+            }
+            
+            .service-hero-image {
+                height: 200px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">Datatribute LLC</a>
+            <a href="index.html" class="logo">FODMAP <span>DATATRIBUTE</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="services.html" class="active">Catering</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="science.html">The Science</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Book Event</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Header -->
     <section class="page-header">
-        <h1>Our Services</h1>
-        <p>Comprehensive market intelligence packages designed to power your success in the low-FODMAP industry</p>
+        <h1>Smart Catering</h1>
+        <p>Data-optimized menus for corporate offices, weddings, and private events in NoVA and Northern Alabama.</p>
     </section>
 
-    <!-- Services Detailed -->
     <section class="services-detailed">
         <div class="container">
-            <!-- Market Snapshot Package -->
+            
             <div class="service-detail">
-                <div class="service-header">
-                    <div class="service-icon-large">📊</div>
-                    <div class="service-title">
-                        <h2>Market Snapshot Package</h2>
-                        <span class="service-badge">Essential • Entry Level</span>
-                    </div>
+                <div class="service-hero-image">
+                    <img src="https://images.unsplash.com/photo-1587574293340-e0011c4e8ecf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corporate Catering">
                 </div>
-                <p class="service-description">
-                    Perfect for new entrants and businesses looking to understand the low-FODMAP landscape. Our Market Snapshot Package provides you with a comprehensive foundation of market intelligence, helping you make informed decisions about entering or expanding within this growing sector.
-                </p>
-                
-                <div class="service-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">📈</div>
-                        <div class="feature-text">
-                            <h4>Market Size & Growth</h4>
-                            <p>Current market valuation and 5-year growth projections with detailed analysis</p>
+                <div class="service-content-wrapper">
+                    <div class="service-header">
+                        <div class="service-icon-large">🏢</div>
+                        <div class="service-title">
+                            <h2>The Corporate "Brain Food" Package</h2>
+                            <span class="service-badge">Arlington • Huntsville • Office & Conferences</span>
                         </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">👥</div>
-                        <div class="feature-text">
-                            <h4>Consumer Demographics</h4>
-                            <p>Detailed profiles of target consumers, their behaviors, and purchasing patterns</p>
+                    <p class="service-description">
+                        Heavy, greasy catering kills afternoon productivity. Our corporate menus are engineered using low-fermentation ingredients to prevent bloating and "food comas." We use predictive modeling to ensure you have exactly enough food for your headcount, providing you with waste reduction reports after every event.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-text">
+                                <h4>Productivity Focused</h4>
+                                <p>High protein, low-glycemic index ingredients to sustain focus.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🥗</div>
+                            <div class="feature-text">
+                                <h4>Individual or Buffet</h4>
+                                <p>COVID-safe boxed lunches or data-optimized buffet lines.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📉</div>
+                            <div class="feature-text">
+                                <h4>Waste Tracking</h4>
+                                <p>Post-event analytics on consumption vs. waste for ESG reporting.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🏷️</div>
+                            <div class="feature-text">
+                                <h4>Smart Labeling</h4>
+                                <p>QR codes on every dish detailing FODMAP levels and ingredients.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🔍</div>
-                        <div class="feature-text">
-                            <h4>Trend Analysis</h4>
-                            <p>Emerging trends, innovations, and shifts in consumer preferences</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🌍</div>
-                        <div class="feature-text">
-                            <h4>Regional Insights</h4>
-                            <p>Geographic market variations and regional opportunities</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="service-deliverables">
-                    <h3>What You'll Receive:</h3>
-                    <ul class="deliverables-list">
-                        <li>40-page market analysis report</li>
-                        <li>Executive summary presentation</li>
-                        <li>Market size data & forecasts</li>
-                        <li>Consumer demographic profiles</li>
-                        <li>Key trend identification</li>
-                        <li>30-minute consultation call</li>
-                    </ul>
-                </div>
-
-                <div class="service-cta">
-                    <div class="pricing-info">
-                        Starting at
-                        <span class="pricing-amount">Contact for Pricing</span>
+                    <div class="service-deliverables">
+                        <h3>Package Inclusions:</h3>
+                        <ul class="deliverables-list">
+                            <li>Monash-Compliant Menu Design</li>
+                            <li>Delivery & Setup (NoVA/Huntsville)</li>
+                            <li>Eco-friendly biodegradable packaging</li>
+                            <li>Consumption & Waste Report</li>
+                            <li>On-call Dietary Concierge</li>
+                            <li>Net-30 Terms for Corporate Accounts</li>
+                        </ul>
                     </div>
-                    <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+
+                    <div class="service-cta">
+                        <div class="pricing-info">
+                            Headcount Pricing
+                            <span class="pricing-amount">$18 - $35 / person</span>
+                        </div>
+                        <a href="menu.html" class="btn btn-primary">Seasonal Menu</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Competitive Edge Package -->
             <div class="service-detail">
-                <div class="service-header">
-                    <div class="service-icon-large">🎯</div>
-                    <div class="service-title">
-                        <h2>Competitive Edge Package</h2>
-                        <span class="service-badge">Advanced • Growth Focused</span>
-                    </div>
+                <div class="service-hero-image">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wedding Catering">
                 </div>
-                <p class="service-description">
-                    Gain a significant competitive advantage with our comprehensive analysis package. We go beyond basic market data to dissect your competition, identify market gaps, and reveal strategic opportunities that will position your business for success. This package includes everything from the Market Snapshot Package plus advanced competitive intelligence.
-                </p>
-                
-                <div class="service-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">🏢</div>
-                        <div class="feature-text">
-                            <h4>Competitor Profiling</h4>
-                            <p>Deep-dive analysis of 10-15 key competitors including strategies and positioning</p>
+                <div class="service-content-wrapper">
+                    <div class="service-header">
+                        <div class="service-icon-large">💍</div>
+                        <div class="service-title">
+                            <h2>Inclusive Weddings & Galas</h2>
+                            <span class="service-badge">Full Service • Zero Compromise</span>
                         </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">💰</div>
-                        <div class="feature-text">
-                            <h4>Pricing Analysis</h4>
-                            <p>Comprehensive pricing benchmarks and competitive pricing strategies</p>
+                    <p class="service-description">
+                        Stop ordering "special plates" for guests with allergies. Our philosophy is **Universal Design**: a menu so delicious that no one realizes it's Gluten-Free, Dairy-Free, and Low-FODMAP. From the hors d'oeuvres to the main course, everyone eats the same safe, gourmet meal.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">👩‍🍳</div>
+                            <div class="feature-text">
+                                <h4>Chef-Attended Stations</h4>
+                                <p>Live carving and plating stations by trained culinary staff.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🍷</div>
+                            <div class="feature-text">
+                                <h4>Safe Bar Service</h4>
+                                <p>Low-sugar, low-fermentation wine and cocktail curation.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-text">
+                                <h4>Guest Heatmapping</h4>
+                                <p>We analyze your guest list RSVPs to flag potential allergen clusters.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🧅</div>
+                            <div class="feature-text">
+                                <h4>Invisible Substitutions</h4>
+                                <p>Garlic-infused oils and maple glazes replace triggers seamlessly.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📦</div>
-                        <div class="feature-text">
-                            <h4>Product Portfolio Review</h4>
-                            <p>Analysis of competitor offerings, strengths, and weaknesses</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">💎</div>
-                        <div class="feature-text">
-                            <h4>Market Gap Identification</h4>
-                            <p>Uncover underserved niches and opportunities for differentiation</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📱</div>
-                        <div class="feature-text">
-                            <h4>Marketing Strategy Analysis</h4>
-                            <p>Review of competitor marketing channels, messaging, and effectiveness</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">⚡</div>
-                        <div class="feature-text">
-                            <h4>SWOT Analysis</h4>
-                            <p>Detailed strengths, weaknesses, opportunities, and threats assessment</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="service-deliverables">
-                    <h3>What You'll Receive:</h3>
-                    <ul class="deliverables-list">
-                        <li>Complete Market Snapshot Package</li>
-                        <li>70-page competitive analysis report</li>
-                        <li>Competitor comparison matrices</li>
-                        <li>Pricing strategy recommendations</li>
-                        <li>Market opportunity maps</li>
-                        <li>Strategic positioning guide</li>
-                        <li>Two 60-minute strategy sessions</li>
-                        <li>90-day email support</li>
-                    </ul>
-                </div>
-
-                <div class="service-cta">
-                    <div class="pricing-info">
-                        Starting at
-                        <span class="pricing-amount">Contact for Pricing</span>
+                    <div class="service-deliverables">
+                        <h3>Package Inclusions:</h3>
+                        <ul class="deliverables-list">
+                            <li>Private "Data & Dining" Tasting</li>
+                            <li>Full Service Waitstaff</li>
+                            <li>China, Flatware & Glassware Rental</li>
+                            <li>Custom Cake/Dessert Coordination</li>
+                            <li>Allergen Safety Guarantee</li>
+                            <li>Vendor Meal Coordination</li>
+                        </ul>
                     </div>
-                    <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+
+                    <div class="service-cta">
+                        <div class="pricing-info">
+                            Full Service
+                            <span class="pricing-amount">Custom Proposals</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Schedule Consultation</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Go-to-Market Pro Package -->
             <div class="service-detail">
-                <div class="service-header">
-                    <div class="service-icon-large">🚀</div>
-                    <div class="service-title">
-                        <h2>Go-to-Market Pro Package</h2>
-                        <span class="service-badge">Premium • Complete Solution</span>
-                    </div>
+                <div class="service-hero-image">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Meal Prep">
                 </div>
-                <p class="service-description">
-                    Our most comprehensive offering designed for businesses ready to launch or scale in the low-FODMAP market. This package includes everything from our other packages plus a complete, customized go-to-market strategy that guides you from concept to successful launch and beyond. We become your strategic partner in market entry and growth.
-                </p>
-                
-                <div class="service-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">🎨</div>
-                        <div class="feature-text">
-                            <h4>Product Positioning</h4>
-                            <p>Craft compelling brand positioning and unique value propositions</p>
+                <div class="service-content-wrapper">
+                    <div class="service-header">
+                        <div class="service-icon-large">🍱</div>
+                        <div class="service-title">
+                            <h2>The Data-Diet Subscription</h2>
+                            <span class="service-badge">Weekly Delivery • Personal AI Model</span>
                         </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">💵</div>
-                        <div class="feature-text">
-                            <h4>Pricing Strategy</h4>
-                            <p>Develop optimal pricing models based on market data and positioning</p>
+                    <p class="service-description">
+                        More than just meal prep. This is an algorithmic approach to your gut health. You provide weekly feedback on taste and digestion, and our system adjusts your future menus to optimize for ingredients that make you feel best. Available in Arlington/Fairfax and Huntsville Metro areas.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🤖</div>
+                            <div class="feature-text">
+                                <h4>Algorithmic Menu</h4>
+                                <p>Menus evolve based on your weekly rating and symptom feedback.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🚚</div>
+                            <div class="feature-text">
+                                <h4>Local Delivery</h4>
+                                <p>Contactless delivery to your doorstep every Sunday & Wednesday.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔄</div>
+                            <div class="feature-text">
+                                <h4>Elimination Protocol</h4>
+                                <p>We can guide you through the Monash elimination and reintroduction phases.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <div class="feature-text">
+                                <h4>Dashboard Access</h4>
+                                <p>View your nutrient intake and symptom correlations online.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🛒</div>
-                        <div class="feature-text">
-                            <h4>Distribution Planning</h4>
-                            <p>Identify and prioritize distribution channels for maximum reach</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📢</div>
-                        <div class="feature-text">
-                            <h4>Marketing Blueprint</h4>
-                            <p>Complete marketing plan with campaigns, channels, and content strategy</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📊</div>
-                        <div class="feature-text">
-                            <h4>Sales Strategy</h4>
-                            <p>Sales channel optimization and revenue projection modeling</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📅</div>
-                        <div class="feature-text">
-                            <h4>Launch Timeline</h4>
-                            <p>Detailed 12-month roadmap with milestones and KPIs</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🤝</div>
-                        <div class="feature-text">
-                            <h4>Partnership Opportunities</h4>
-                            <p>Identify potential retail, distributor, and strategic partnerships</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📈</div>
-                        <div class="feature-text">
-                            <h4>Performance Tracking</h4>
-                            <p>KPI framework and analytics dashboard for ongoing optimization</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="service-deliverables">
-                    <h3>What You'll Receive:</h3>
-                    <ul class="deliverables-list">
-                        <li>Complete Competitive Edge Package</li>
-                        <li>120+ page go-to-market strategy</li>
-                        <li>Brand positioning framework</li>
-                        <li>Pricing model & financial projections</li>
-                        <li>Distribution channel strategy</li>
-                        <li>12-month marketing plan</li>
-                        <li>Sales playbook & materials</li>
-                        <li>Launch timeline & checklist</li>
-                        <li>Partnership opportunity list</li>
-                        <li>KPI dashboard template</li>
-                        <li>Monthly strategy sessions (6 months)</li>
-                        <li>6 months of priority support</li>
-                    </ul>
-                </div>
-
-                <div class="service-cta">
-                    <div class="pricing-info">
-                        Starting at
-                        <span class="pricing-amount">Contact for Pricing</span>
+                    <div class="service-deliverables">
+                        <h3>What You'll Receive:</h3>
+                        <ul class="deliverables-list">
+                            <li>10 Chef-Prepared Meals / Week</li>
+                            <li>Macro & Micronutrient Breakdown</li>
+                            <li>Weekly Symptom Check-in</li>
+                            <li>Rotating Seasonal Menus</li>
+                            <li>Reusable Cooler Bag Exchange</li>
+                            <li>Priority Access to Holiday Menus</li>
+                        </ul>
                     </div>
-                    <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+
+                    <div class="service-cta">
+                        <div class="pricing-info">
+                            Weekly Plans
+                            <span class="pricing-amount">Start at $145 / week</span>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary">Join Waitlist</a>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
             <div class="section-header">
-                <h2>Our Process</h2>
-                <p>A proven methodology that delivers results</p>
+                <h2>The Data-to-Table Process</h2>
+                <p>How we engineer the perfect event menu</p>
             </div>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3>Discovery</h3>
-                    <p>We begin with an in-depth consultation to understand your business, goals, and specific needs in the low-FODMAP market.</p>
+                    <h3>Input</h3>
+                    <p>We collect data on your guest count, time of day, venue logistics, and specific dietary exclusion lists.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>Research</h3>
-                    <p>Our team conducts comprehensive market research, competitive analysis, and data collection using industry-leading tools.</p>
+                    <h3>Model</h3>
+                    <p>Our algorithms calculate optimal portions to minimize waste and suggest ingredients that are broadly tolerated.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3>Analysis</h3>
-                    <p>We analyze the data to identify trends, opportunities, and strategic insights tailored to your business objectives.</p>
+                    <h3>Source</h3>
+                    <p>We procure ingredients from local farms in the Shenandoah Valley (VA) or Tennessee Valley (AL).</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3>Delivery</h3>
-                    <p>Receive your comprehensive report and strategy documents, followed by collaborative review sessions to ensure clarity.</p>
+                    <h3>Execute</h3>
+                    <p>Our culinary team prepares and serves the meal, ensuring zero cross-contamination with allergens.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
-            <h2>Ready to Get Started?</h2>
-            <p>Let's discuss how we can help you succeed in the low-FODMAP market</p>
-            <a href="contact.html" class="btn btn-white">Schedule a Free Consultation</a>
+            <h2>Taste the Difference Data Makes</h2>
+            <p>Ready to book catering that is smart, safe, and delicious?</p>
+            <a href="contact.html" class="btn btn-white">Get a Proposal</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Datatribute LLC. All rights reserved.</p>

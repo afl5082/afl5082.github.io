@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | FODMAP-Analytics</title>
+    <title>Book an Event | FODMAP DATATRIBUTE LLC</title>
     <style>
         * {
             margin: 0;
@@ -12,10 +12,11 @@
         }
 
         :root {
+            /* Matching the Index.html palette */
             --primary: #2563eb;
             --primary-dark: #1e40af;
             --secondary: #10b981;
-            --accent: #8b5cf6;
+            --accent: #f59e0b; /* Added the culinary accent color */
             --dark: #0f172a;
             --light: #f8fafc;
             --gray: #64748b;
@@ -34,7 +35,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -51,9 +52,15 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-weight: 800;
+            color: var(--dark);
             text-decoration: none;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--primary);
         }
 
         .nav-links {
@@ -65,8 +72,10 @@
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover,
@@ -77,7 +86,8 @@
         /* Page Header */
         .page-header {
             margin-top: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Changed gradient to be slightly warmer/food appropriate */
+            background: linear-gradient(135deg, #1e40af 0%, #10b981 100%);
             color: white;
             padding: 5rem 2rem;
             text-align: center;
@@ -152,6 +162,7 @@
             justify-content: center;
             font-size: 1.5rem;
             flex-shrink: 0;
+            color: white;
         }
 
         .method-content h3 {
@@ -269,6 +280,8 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-submit:hover {
@@ -335,7 +348,7 @@
         /* CTA Section */
         .cta-section {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #10b981 100%);
             color: white;
             text-align: center;
         }
@@ -419,33 +432,31 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">Datatribute LLC</a>
+            <a href="index.html" class="logo">FODMAP <span>DATATRIBUTE</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html">Catering</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="science.html">The Science</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html" class="active">Book Event</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Header -->
     <section class="page-header">
-        <h1>Get In Touch</h1>
-        <p>Ready to unlock the potential of the low-FODMAP market? Let's start a conversation.</p>
+        <h1>Start Your Order</h1>
+        <p>Tell us about your event. We'll use our data models to build the perfect, zero-waste menu for your guests.</p>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <!-- Contact Info -->
                 <div class="contact-info">
-                    <h2>Let's Talk About Your Project</h2>
-                    <p>Whether you're launching a new product, expanding your portfolio, or exploring market opportunities, we're here to help. Reach out to discuss your needs and discover how FODMAP-Analytics can support your success.</p>
+                    <h2>Event & Catering Inquiries</h2>
+                    <p>Whether you are planning a corporate lunch in Arlington or a wedding in Huntsville, our team is ready to design a menu that accommodates sensitive stomachs without sacrificing flavor.</p>
                     
                     <div class="contact-methods">
                         <div class="contact-method">
@@ -453,7 +464,7 @@
                             <div class="method-content">
                                 <h3>Email Us</h3>
                                 <p><a href="mailto:adam@datatribute.com">adam@datatribute.com</a></p>
-                                <p style="margin-top: 0.5rem; font-size: 0.95rem;">We typically respond within 24 hours</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.95rem;">Menus sent within 24 hours</p>
                             </div>
                         </div>
                         
@@ -462,31 +473,30 @@
                             <div class="method-content">
                                 <h3>Call Us</h3>
                                 <p><a href="tel:+2018396234">(201) 839-6234</a></p>
-                                <p style="margin-top: 0.5rem; font-size: 0.95rem;">Monday - Friday, 9:00 AM - 5:00 PM EST</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.95rem;">Mon - Fri, 9:00 AM - 6:00 PM EST</p>
                             </div>
                         </div>
                         
                         <div class="contact-method">
                             <div class="method-icon">📍</div>
                             <div class="method-content">
-                                <h3>Location</h3>
-                                <p>Arlington, VA</p>
-                                <p style="margin-top: 0.5rem; font-size: 0.95rem;">Serving clients nationwide</p>
+                                <h3>Our Kitchens</h3>
+                                <p><strong>Virginia:</strong> Arlington & Fairfax Area</p>
+                                <p><strong>Alabama:</strong> Huntsville & Florence/Shoals</p>
                             </div>
                         </div>
                     </div>
 
-                    <h3 style="margin-bottom: 1rem; color: var(--dark);">Connect With Us</h3>
+                    <h3 style="margin-bottom: 1rem; color: var(--dark);">Follow Our Kitchen</h3>
                     <div class="social-links">
-                        <a href="llc.datatribute.com" class="social-link" title="LinkedIn">💼</a>
-                        <a href="llc.datatribute.com" class="social-link" title="Twitter">🐦</a>
-                        <a href="llc.datatribute.com" class="social-link" title="Facebook">📘</a>
+                        <a href="fodmap.datatribute.com" class="social-link" title="LinkedIn">💼</a>
+                        <a href="fodmap.datatribute.com" class="social-link" title="Twitter">🐦</a>
+                        <a href="fodmap.datatribute.com" class="social-link" title="Instagram">📸</a>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
                 <div class="contact-form">
-                    <h2>Send Us a Message</h2>
+                    <h2>Event Details</h2>
                     <form id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
@@ -505,98 +515,101 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Phone</label>
-                            <input type="tel" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Company</label>
+                            <label>Company / Organization</label>
                             <input type="text" name="company">
                         </div>
 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Event Date</label>
+                                <input type="date" name="eventDate">
+                            </div>
+                            <div class="form-group">
+                                <label>Est. Guest Count</label>
+                                <input type="number" name="guestCount" min="1">
+                            </div>
+                        </div>
+
                         <div class="form-group">
-                            <label>Service Interest <span class="required">*</span></label>
+                            <label>Catering Type <span class="required">*</span></label>
                             <select name="service" required>
-                                <option value="">Select a service...</option>
-                                <option value="market-snapshot">Market Snapshot Package</option>
-                                <option value="competitive-edge">Competitive Edge Package</option>
-                                <option value="go-to-market">Go-to-Market Pro Package</option>
-                                <option value="consultation">Free Consultation</option>
-                                <option value="other">Other</option>
+                                <option value="">Select an option...</option>
+                                <option value="corporate-lunch">Corporate Lunch / Office</option>
+                                <option value="wedding-gala">Wedding or Large Gala</option>
+                                <option value="private-party">Private Party</option>
+                                <option value="meal-prep">Individual Meal Prep Subscription</option>
+                                <option value="consultation">Menu Consultation Only</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label>Message <span class="required">*</span></label>
-                            <textarea name="message" required placeholder="Tell us about your project, goals, or questions..."></textarea>
+                            <label>Dietary Specifics & Message <span class="required">*</span></label>
+                            <textarea name="message" required placeholder="Tell us about your event. Are there other allergies we should know about (Gluten, Dairy, Nut)?"></textarea>
                         </div>
 
-                        <button type="submit" class="btn-submit">Send Message</button>
+                        <button type="submit" class="btn-submit">Request Menu & Quote</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
             <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Quick answers to common questions about our services</p>
+                <h2>Catering FAQ</h2>
+                <p>Common questions about our data-driven food service</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <h3>How long does a typical project take?</h3>
-                    <p>Project timelines vary based on scope. A Market Snapshot Package typically takes 2-3 weeks, the Competitive Edge Package takes 4-6 weeks, and the Go-to-Market Pro Package takes 8-12 weeks from kickoff to final delivery.</p>
+                    <h3>How much notice do you need for an order?</h3>
+                    <p>Because we use fresh, locally sourced ingredients to minimize waste, we prefer 48 hours notice for corporate lunches and 2 weeks for private parties. For weddings, we recommend booking 3-6 months in advance.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you offer custom packages?</h3>
-                    <p>Absolutely! While our three main packages cover most needs, we're happy to create custom solutions tailored to your specific requirements. Contact us to discuss your unique situation.</p>
+                    <h3>Is your food purely Low-FODMAP?</h3>
+                    <p>Yes. Every item on our menu is designed to be Low-FODMAP compliant based on Monash University standards. However, our culinary team ensures the food is seasoned and prepared so that guests without restrictions will enjoy it just as much.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What industries do you serve?</h3>
-                    <p>We specialize in the low-FODMAP food industry, serving manufacturers, startups, retailers, and distributors. Whether you're producing packaged foods, supplements, or meal kits, we have the expertise to help.</p>
+                    <h3>Can you accommodate other allergies?</h3>
+                    <p>Absolutely. Our kitchens are naturally 95% Gluten-Free and can easily accommodate Dairy-Free, Nut-Free, and Vegan requests. Please list specific allergies in the contact form.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Is there a free consultation?</h3>
-                    <p>Yes! We offer a complimentary 30-minute consultation to discuss your needs and determine how we can best support your business. There's no obligation, and it's a great way to get to know our approach.</p>
+                    <h3>Do you offer tastings?</h3>
+                    <p>Yes, for weddings and large corporate contracts, we offer a "Data & Dining" tasting session where we review your guest demographics and let you sample the proposed menu.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What geographic markets do you cover?</h3>
-                    <p>We provide insights for North American markets as our primary focus, with capabilities to analyze international markets including Europe, Australia, and Asia-Pacific regions upon request.</p>
+                    <h3>Where do you deliver?</h3>
+                    <p>We actively serve the Northern Virginia area (Arlington, Alexandria, Fairfax) and Northern Alabama (Huntsville, Madison, Florence, The Shoals). Delivery fees may apply based on distance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
-            <h2>Why Choose FODMAP-Analytics?</h2>
-            <p>We're committed to your success from day one</p>
+            <h2>Experience the Datatribute Difference</h2>
+            <p>Predictive portioning. Zero waste. 100% Delicious.</p>
             <div class="cta-features">
                 <div class="cta-feature">
                     <span class="cta-feature-icon">✓</span>
-                    <p>Free Initial Consultation</p>
+                    <p>Monash-Compliant Ingredients</p>
                 </div>
                 <div class="cta-feature">
                     <span class="cta-feature-icon">✓</span>
-                    <p>Custom Solutions Available</p>
+                    <p>AI-Optimized Portions</p>
                 </div>
                 <div class="cta-feature">
                     <span class="cta-feature-icon">✓</span>
-                    <p>Fast Turnaround Times</p>
+                    <p>Locally Sourced</p>
                 </div>
                 <div class="cta-feature">
                     <span class="cta-feature-icon">✓</span>
-                    <p>Ongoing Support Included</p>
+                    <p>Full Service Available</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Datatribute LLC. All rights reserved.</p>
@@ -618,11 +631,10 @@
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Here you would typically send the data to your backend
-            console.log('Form submitted with data:', data);
+            console.log('Catering Inquiry:', data);
             
-            // Show success message (you can customize this)
-            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+            // Show success message
+            alert('Thank you! Our catering team will review your event details and send a proposal within 24 hours.');
             
             // Reset form
             this.reset();

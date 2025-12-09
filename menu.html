@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | FODMAP DATATRIBUTE LLC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .page-header {
+            margin-top: 80px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Visual Menu Container */
+        .menu-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .menu-category {
+            margin-bottom: 5rem;
+        }
+
+        .category-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .category-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            display: inline-block;
+            background: var(--light);
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border);
+            z-index: 0;
+        }
+
+        /* Visual Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .menu-item {
+            display: flex;
+            gap: 1.5rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .menu-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .menu-content {
+            flex-grow: 1;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-header h3 {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .item-desc {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .item-badges {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-gf { background: #e0f2fe; color: #0284c7; }
+        .badge-lf { background: #dcfce7; color: #16a34a; }
+        .badge-v { background: #fef3c7; color: #d97706; }
+
+        /* TEXT ONLY EXPANDED MENU STYLES */
+        .expanded-menu-section {
+            background: white;
+            padding: 6rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .text-menu-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 4rem;
+        }
+
+        .text-category h3 {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .dish-list {
+            list-style: none;
+        }
+
+        .dish-row {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        .dish-row:last-child {
+            border-bottom: none;
+        }
+
+        .dish-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .dish-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .dish-description {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        .mini-badge {
+            font-size: 0.7rem;
+            color: var(--gray);
+            border: 1px solid var(--border);
+            padding: 1px 6px;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .cta-footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b1120;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-grid { grid-template-columns: 1fr; }
+            .menu-item { flex-direction: column; }
+            .menu-img { width: 100%; height: 200px; }
+            .text-menu-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">FODMAP <span>DATATRIBUTE</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Catering</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="science.html">The Science</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Book Event</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Seasonal Menu</h1>
+        <p>A collection of our most popular data-verified dishes. Safe for the gut, uncompromising on flavor. Please contact us for specific requests</p>
+    </header>
+
+    <div class="menu-container">
+        
+        <div class="menu-category">
+            <div class="category-title">
+                <h2>Signature Plates</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Salmon" class="menu-img">
+                    <div class="menu-content">
+                        <div class="item-header">
+                            <h3>Maple Glazed Atlantic Salmon</h3>
+                        </div>
+                        <p class="item-desc">Pan-seared salmon finished with a glaze of pure maple syrup, Dijon mustard, and smoked paprika. Served over wilted spinach.</p>
+                        <div class="item-badges">
+                            <span class="badge badge-gf">GF</span>
+                            <span class="badge badge-lf">Low-Fructose</span>
+                            <span class="badge badge-v">Omega-3 Rich</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Steak" class="menu-img">
+                    <div class="menu-content">
+                        <div class="item-header">
+                            <h3>Chimichurri Flank Steak</h3>
+                        </div>
+                        <p class="item-desc">Sous-vide flank steak grilled to medium-rare. Topped with our "Zero-Allium" Chimichurri made from parsley, cilantro, oregano, and garlic-infused olive oil.</p>
+                        <div class="item-badges">
+                            <span class="badge badge-gf">GF</span>
+                            <span class="badge badge-lf">No Garlic/Onion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chicken" class="menu-img">
+                    <div class="menu-content">
+                        <div class="item-header">
+                            <h3>Lemon-Rosemary Roast Chicken</h3>
+                        </div>
+                        <p class="item-desc">Herb-crusted chicken thighs roasted with lemon wheels and carrots. A corporate lunch staple that provides high protein without the afternoon slump.</p>
+                        <div class="item-badges">
+                            <span class="badge badge-gf">GF</span>
+                            <span class="badge badge-lf">Safe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Bowl" class="menu-img">
+                    <div class="menu-content">
+                        <div class="item-header">
+                            <h3>The "Safe" Buddha Bowl</h3>
+                        </div>
+                        <p class="item-desc">Quinoa base topped with roasted kabocha squash, firm tofu, edamame, and a sesame-ginger dressing (verified gluten-free soy sauce).</p>
+                        <div class="item-badges">
+                            <span class="badge badge-v">Vegan</span>
+                            <span class="badge badge-gf">GF</span>
+                            <span class="badge badge-lf">High Fiber</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <div class="category-title">
+                <h2>Accompaniments</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Potatoes" class="menu-img">
+                    <div class="menu-content">
+                        <div class="item-header">
+                            <h3>Rosemary Confited Potatoes</h3>
+                        </div>
+                        <p class="item-desc">Baby potatoes slow-cooked in garlic-infused oil until tender, then smashed and crisped.</p>
+                        <div class="item-badges">
+                            <span class="badge badge-v">Vegan</span>
+                            <span class="badge badge-lf">Fructan Free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sourdough" class="menu-img">
+                    <div class="menu-content">
+                        <div class="item-header">
+                            <h3>24-Hour Sourdough</h3>
+                        </div>
+                        <p class="item-desc">Slow-fermented spelt sourdough bread. The long fermentation process breaks down fructans to Monash-safe levels.</p>
+                        <div class="item-badges">
+                            <span class="badge badge-v">Vegan</span>
+                            <span class="badge badge-lf">Low Fructan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <div class="category-title">
+                <h2>Desserts</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1579306194872-64d3b7bac4c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Dessert" class="menu-img">
+                    <div class="menu-content">
+                        <div class="item-header">
+                            <h3>Dark Chocolate Silk Mousse</h3>
+                        </div>
+                        <p class="item-desc">Made with lactose-free cream and 70% dark chocolate. Rich, airy, and entirely safe for dairy sensitivities.</p>
+                        <div class="item-badges">
+                            <span class="badge badge-gf">GF</span>
+                            <span class="badge badge-lf">Low Lactose</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pavlova" class="menu-img">
+                    <div class="menu-content">
+                        <div class="item-header">
+                            <h3>Berry Pavlova Nests</h3>
+                        </div>
+                        <p class="item-desc">Crisp meringue topped with lactose-free whipped cream and safe portions of strawberries and blueberries.</p>
+                        <div class="item-badges">
+                            <span class="badge badge-gf">GF</span>
+                            <span class="badge badge-lf">Low Fructose</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="expanded-menu-section">
+        <div class="category-title">
+            <h2>Seasonal & Expanded Offerings</h2>
+            <p style="margin-top: 1rem; color: var(--gray);">Additional selections available for catering packages and custom events.</p>
+        </div>
+
+        <div class="text-menu-grid">
+            <div class="menu-column">
+                <div class="text-category">
+                    <h3>Passed Hors d'Oeuvres</h3>
+                    <ul class="dish-list">
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Rice Paper Spring Rolls</span>
+                                <span class="mini-badge">GF / V</span>
+                            </div>
+                            <div class="dish-description">Filled with shrimp, vermicelli, mint, and cucumber. Served with peanut-free sesame dip.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Polenta Bites & Tapenade</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Crispy corn polenta squares topped with green olive and caper tapenade (garlic-free).</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Molecular Caprese Skewers</span>
+                                <span class="mini-badge">LF</span>
+                            </div>
+                            <div class="dish-description">Cherry tomato, lactose-free mozzarella pearls, and basil-infused oil drizzle.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Prosciutto Wrapped Melon</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Aged prosciutto di parma wrapped around cantaloupe (fructose-safe portions).</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="text-category" style="margin-top: 3rem;">
+                    <h3>Soups & Salads</h3>
+                    <ul class="dish-list">
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Verified Bone Broth</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Slow-simmered chicken or beef broth made without onions/mirepoix. Herbs only.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Arugula & Walnut</span>
+                                <span class="mini-badge">V</span>
+                            </div>
+                            <div class="dish-description">Baby arugula, toasted walnuts, shaved parmesan (aged), lemon emulsion.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="menu-column">
+                <div class="text-category">
+                    <h3>Premium Entrées</h3>
+                    <ul class="dish-list">
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Risotto Milanese</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Arborio rice cooked in saffron-infused verified broth with lactose-free butter finish.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Mustard Pork Tenderloin</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Roasted pork medallions with a maple-mustard reduction and thyme.</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Seared Scallops</span>
+                                <span class="mini-badge">GF</span>
+                            </div>
+                            <div class="dish-description">Day-boat scallops served over carrot-ginger purée (no cream).</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Ginger-Soy Tofu Stir Fry</span>
+                                <span class="mini-badge">V</span>
+                            </div>
+                            <div class="dish-description">Firm tofu, bok choy, and bell peppers in a garlic-free tamari glaze.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="text-category" style="margin-top: 3rem;">
+                    <h3>Beverage Program</h3>
+                    <ul class="dish-list">
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Low-Fructose Mocktails</span>
+                            </div>
+                            <div class="dish-description">Cucumber-Basil Soda, Cranberry-Lime spritzers (no HFCS).</div>
+                        </li>
+                        <li class="dish-row">
+                            <div class="dish-top">
+                                <span class="dish-name">Digestif Selection</span>
+                            </div>
+                            <div class="dish-description">Curated list of peppermint teas and ginger infusions to aid digestion post-meal.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-footer">
+            <h3 style="margin-bottom: 1rem;">Ready to build your menu?</h3>
+            <a href="contact.html" class="btn" style="background: var(--primary); color: white;">Start Your Order</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Datatribute LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

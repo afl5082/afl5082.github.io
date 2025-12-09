@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | FODMAP-Analytics</title>
+    <title>About Us | FODMAP DATATRIBUTE LLC</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
             --primary: #2563eb;
             --primary-dark: #1e40af;
             --secondary: #10b981;
-            --accent: #8b5cf6;
+            --accent: #f59e0b; /* Consistent culinary accent */
             --dark: #0f172a;
             --light: #f8fafc;
             --gray: #64748b;
@@ -34,7 +34,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -51,9 +51,15 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-weight: 800;
+            color: var(--dark);
             text-decoration: none;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--primary);
         }
 
         .nav-links {
@@ -65,8 +71,10 @@
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover,
@@ -77,7 +85,10 @@
         /* Page Header */
         .page-header {
             margin-top: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Image of a team working/kitchen context */
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
             color: white;
             padding: 6rem 2rem;
             text-align: center;
@@ -208,7 +219,7 @@
         }
 
         .team-image {
-            height: 260px;
+            height: 300px;
             background-color: #e2e8f0;
             position: relative;
         }
@@ -217,6 +228,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
         }
 
         .team-content {
@@ -278,7 +290,7 @@
         
         .footer-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             margin-bottom: 2rem;
         }
 
@@ -313,19 +325,21 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">Datatribute LLC</a>
+            <a href="index.html" class="logo">FODMAP <span>DATATRIBUTE</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html">Catering</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="science.html">The Science</a></li>
                 <li><a href="about.html" class="active">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Book Event</a></li>
             </ul>
         </div>
     </nav>
 
     <section class="page-header">
-        <h1>Decoding Gut Health Data</h1>
-        <p>We bridge the gap between clinical science and consumer market trends, helping brands navigate the rapidly growing low-FODMAP landscape.</p>
+        <h1>Culinary Art Meets Data Science</h1>
+        <p>We are reimagining hospitality by combining Monash-certified nutritional science with high-end culinary execution.</p>
     </section>
 
     <section class="about-section">
@@ -333,12 +347,12 @@
             <div class="split-layout">
                 <div class="split-content">
                     <h2>Our Origin Story</h2>
-                    <p>It started in 2020 with a simple observation: while the science behind Irritable Bowel Syndrome (IBS) was advancing rapidly, the data available to food manufacturers was stuck in the past.</p>
-                    <p>Our founder, Adam LaCaria, a Data Engineer living with IBS, realized that navigating the grocery store was a statistical nightmare. He saw a disconnect between the <strong>1 in 7 people worldwide</strong> suffering from IBS and the food brands trying to serve them.</p>
-                    <p>FODMAP-Analytics was born from a desire to translate complex digestive health data into actionable insights. We don't just count calories; we analyze fermentable carbohydrates to predict market trends before they hit the shelves.</p>
+                    <p>It started in 2020 with a moment of frustration at a wedding buffet. Our founder, Adam LaCaria—a Data Engineer living with IBS—realized the "safe" option was a plain, unseasoned chicken breast while everyone else enjoyed a gourmet meal.</p>
+                    <p>He saw a disconnect: The data on Low-FODMAP ingredients existed, but it wasn't being applied in professional kitchens. Catering was still operating on "gut feeling" rather than gut science.</p>
+                    <p>Datatribute was born to bridge this gap. Operating out of the tech hubs of <strong>Northern Virginia</strong> and <strong>Huntsville, Alabama</strong>, we apply rigorous data analysis to ingredient sourcing and menu design. We prove that digestive health doesn't have to mean compromising on flavor.</p>
                 </div>
                 <div class="split-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Data Analytics Team Meeting">
+                    <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chef preparing ingredients">
                 </div>
             </div>
         </div>
@@ -348,20 +362,20 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Products Analyzed</p>
+                    <h3>2</h3>
+                    <p>Major Tech Hubs Served</p>
                 </div>
                 <div class="stat-item">
-                    <h3>50M+</h3>
-                    <p>Consumer Data Points</p>
+                    <h3>100%</h3>
+                    <p>Traceable Ingredients</p>
                 </div>
                 <div class="stat-item">
-                    <h3>12</h3>
-                    <p>Global Markets</p>
+                    <h3>30%</h3>
+                    <p>Avg. Waste Reduction</p>
                 </div>
                 <div class="stat-item">
-                    <h3>24h</h3>
-                    <p>Insight Turnaround</p>
+                    <h3>0</h3>
+                    <p>Compromises on Taste</p>
                 </div>
             </div>
         </div>
@@ -371,13 +385,13 @@
         <div class="container">
             <div class="split-layout">
                 <div class="split-image">
-                    <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Healthy Food Ingredients">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fresh Vegetables">
                 </div>
                 <div class="split-content">
-                    <h2>The Rise of the Low-FODMAP Industry</h2>
-                    <p>In 2005, researchers at <strong>Monash University</strong> in Australia coined the term "FODMAP" (Fermentable Oligosaccharides, Disaccharides, Monosaccharides, and Polyols). What began as clinical research has exploded into a global movement.</p>
-                    <p>The "Free-From" food category is evolving. While the 2010s were dominated by the Gluten-Free boom, the 2020s are defined by <strong>Gut Health</strong>. The global low-FODMAP market is projected to grow at a CAGR of nearly 11% through 2030.</p>
-                    <p>We believe this isn't just a diet trends; it's a medical necessity for millions. We help companies move beyond "gut feeling" strategies and rely on hard data to create products that are both delicious and digestible.</p>
+                    <h2>The Science Behind The Food</h2>
+                    <p>In 2005, researchers at <strong>Monash University</strong> coined the term "FODMAP" (Fermentable Carbohydrates). For millions of people, these specific carbohydrates trigger pain and bloating.</p>
+                    <p>Traditional catering often relies heavily on high-FODMAP triggers like garlic, onions, and wheat to build flavor. We take a different approach. We use <strong>molecular alternatives</strong>—garlic-infused oils (where the flavor is captured but the fermentable sugars are removed), aged cheeses, and alternative grains.</p>
+                    <p>By leveraging Monash University data sets, we engineer menus that are scientifically safe for the sensitive gut, yet indistinguishable from standard fine dining for your other guests.</p>
                 </div>
             </div>
         </div>
@@ -387,23 +401,23 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Core Values</h2>
-                <p>We are data scientists, nutritionists, and strategists working together.</p>
+                <p>We are data scientists, chefs, and nutritionists working together.</p>
             </div>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">🔬</div>
-                    <h3>Scientific Integrity</h3>
-                    <p>We don't guess. Our analytics are grounded in the latest peer-reviewed research from leading gastroenterology institutions.</p>
+                    <h3>Precision Sourcing</h3>
+                    <p>We don't guess. Every ingredient is cross-referenced against the latest peer-reviewed research before it enters our kitchen.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">📊</div>
-                    <h3>Data-First Design</h3>
-                    <p>We believe numbers tell a story. By analyzing purchasing patterns and ingredient trends, we reduce risk for manufacturers.</p>
+                    <div class="value-icon">📉</div>
+                    <h3>Zero-Waste Modeling</h3>
+                    <p>We use predictive analytics to calculate exact portion needs for your event, drastically reducing environmental impact.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">💚</div>
-                    <h3>Empathy for the End User</h3>
-                    <p>We never forget the patient at the end of the supply chain. Every insight we generate is aimed at improving quality of life.</p>
+                    <div class="value-icon">🤝</div>
+                    <h3>Radical Inclusivity</h3>
+                    <p>We believe no guest should have to ask for a "special plate." We design universal menus that everyone can enjoy together.</p>
                 </div>
             </div>
         </div>
@@ -412,29 +426,29 @@
     <section class="team-section">
         <div class="container">
             <div class="section-title">
-                <h2>Meet The Experts</h2>
-                <p>The minds behind the metrics.</p>
+                <h2>Meet The Team</h2>
+                <p>The minds behind the menu.</p>
             </div>
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="images/profile.png" alt="Adam L">
+                        <img src="images/profile.png" alt="Adam LaCaria">
                     </div>
                     <div class="team-content">
                         <h3>Adam LaCaria</h3>
-                        <span class="role">Founder & Lead Data Engineer</span>
-                        <p>Adam combines 10 years of Python/SQL expertise with a passion for digestive health advocacy.</p>
+                        <span class="role">Founder & Lead Engineer</span>
+                        <p>Bridging the worlds of Data Engineering and Gastronomy. Adam uses his 10+ years of Python/SQL expertise to optimize kitchen logistics and nutritional verification.</p>
                     </div>
                 </div>
 
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="images/pic01.jpg" alt="Sarah Miller">
+                        <img src="images/pic01.jpg" alt="Clinical Nutrition Team">
                     </div>
                     <div class="team-content">
-                        <h3>On Staff, RDs</h3>
-                        <span class="role">Head(s) of Nutritional Science</span>
-                        <p>Registered dietitians specializing in IBS management. Our team ensures all our data algorithms align with Monash University standards.</p>
+                        <h3>Clinical Advisory Board</h3>
+                        <span class="role">Nutritional Science & Dietetics</span>
+                        <p>Our rotating board of Registered Dietitians (RDs) reviews every seasonal menu to ensure strict adherence to the Monash Low-FODMAP elimination phase standards.</p>
                     </div>
                 </div>
 
@@ -446,8 +460,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <h3 style="color: white; margin-bottom: 1rem;">FODMAP-Analytics</h3>
-                    <p style="text-align: left;">Data-driven solutions for the future of food.</p>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">FODMAP DATATRIBUTE</h3>
+                    <p>Serving Northern Virginia & Northern Alabama.</p>
                 </div>
             </div>
             <p>&copy; 2025 Datatribute LLC. All rights reserved.</p>
